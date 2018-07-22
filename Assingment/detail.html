@@ -6,7 +6,6 @@
     <link href="assets/css/bootstrap.css" rel="stylesheet">
     <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link href="assets/ItemSlider/css/main-style.css" rel="stylesheet" />
     <link href="assets/css/style.css" rel="stylesheet" />
 </head>
 <body>
@@ -330,17 +329,46 @@
     </p>
 </div>
 <!--Core JavaScript file  -->
-<script src="assets/js/jquery-1.10.2.js"></script>
+<script type="text/javascript" src="assets/js/jquery-3.1.1.js"></script>
+<script type="text/javascript" src="assets/js/jquery-migrate-3.0.1.js"></script>
 <!--bootstrap JavaScript file  -->
-<script src="assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="assets/js/bootstrap.js"></script>
 <!--Slider JavaScript file  -->
-<script src="assets/ItemSlider/js/modernizr.custom.63321.js"></script>
-<script src="assets/ItemSlider/js/jquery.catslider.js"></script>
+<script type="text/javascript" src="assets/slick/slick.js"></script>
 <script>
     $(function () {
-
-        $('#mi-slider').catslider();
-
+        $('.slide-cap').slick({
+            dots: true,
+            infinite: false,
+            speed: 300,
+            slidesToShow: 4,
+            slidesToScroll: 4,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                        infinite: true,
+                        dots: true
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
+        });
     });
 </script>
 </body>
